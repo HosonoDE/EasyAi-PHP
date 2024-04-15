@@ -41,7 +41,7 @@ composer require hosonode/easyai-php
 
 Integrate the helpers easily into your project using:
 ```php
-use HosonoDE\EasyAI-PHP\SpecificHelper;
+use HosonoDE\EasyAI-PHP\SpecificHelper; #Dummy
 ```
 
 No further configuration is needed to get started.
