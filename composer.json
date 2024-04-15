@@ -1,0 +1,7 @@
+{
+    "name": "hosonode/easyai-php",
+    "description": "A lot of AI & AI utility Helpers",
+    "require": {
+        "php": ">=8.1"
+    }
+}
