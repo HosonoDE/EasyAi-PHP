@@ -16,6 +16,11 @@
         "bunnycdn/storage": "^3.2",
         "deeplcom/deepl-php": "^1.7"
     },
+    "autoload": {
+        "psr-4": {
+            "EasyAI\\": "src/"
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
