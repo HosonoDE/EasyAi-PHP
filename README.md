@@ -33,12 +33,16 @@ Ensure you have PHP 8.1 or higher installed on your system.
 ### Installation
 
 Install the project using Composer (coming soon):
-`composer require hosonode/easyai-php`
+```
+composer require hosonode/easyai-php
+```
 
 ### Usage
 
 Integrate the helpers easily into your project using:
-`use HosonoDE\EasyAI-PHP\SpecificHelper;`
+```php
+use HosonoDE\EasyAI-PHP\SpecificHelper;
+```
 
 No further configuration is needed to get started.
 
