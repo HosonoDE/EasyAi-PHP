@@ -69,6 +69,14 @@ Planned Features
 *   **Zyte API Helper**:
 *   **PageSpeed Insights API Helper**:
 
+FAQ
+===
+
+### Q1: Why using EasyAi-PHP and not OpenAI PHP SDK
+
+**A1:** If you are an experienced developer and want to use many features of OpenAI, the OpenAI PHP SDK might be right for you. However, if you want to make simple requests to the OpenAI interface with very few lines of code, our repo is the right one for you, as we have programmed many helpers that you can use many AI and PHP helpers to improve your project.
+Many studies and research papers also show that you should use many different AI agents to do different tasks, each AI has its strengths, weaknesses, functions, etc.. Therefore, it would be very difficult to familiarize yourself with all AIs, which is why we offer a kind of AI framework for you here.
+
 Contributing
 ------------
 
