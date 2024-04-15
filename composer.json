@@ -1,7 +1,14 @@
 {
     "name": "hosonode/easyai-php",
     "description": "A lot of AI & AI utility Helpers",
+    "keywords": ["ai", "php", "openai", "GPT-4", "GPT-3.5", "api", "language", "LLM", "vectorstore", "embedding"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "HosonoDE"
+        }
+    ],
     "require": {
-        "php": ">=8.1"
+        "php": "^8.1"
     }
 }
