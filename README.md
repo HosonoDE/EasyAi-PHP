@@ -170,29 +170,44 @@ $vectorStore = new PineconeVectorStore();
 $vectorStore->addVector($vector); // void
 ```
 
-Roadmap
+:world_map: Roadmap
 =======
 
-Completed Features
+:heavy_check_mark: Completed Features:
 ------------------
 
 - [x] **OpenAI GPT-3.5 and GPT-4 Helpers**:
 - [x] **Embedding Helpers**: With OpenAI
 - [x] **Pinecone Vector Databases Add**: Add Vector/s Delete them
 
-In Progress
+:construction: In Progress:
 -----------
 
-- [ ] **Claude 3 (Opus, Sonnet & Haiku) Helpers**:
-- [ ] **Pinecone Vector Databases Search**: Semantic Search
+- [ ] P1: **Claude 3 (Opus, Sonnet & Haiku) Helpers**:
+- [ ] P1: **Pinecone Vector Databases Search**: Semantic Search
 
-Planned Features
+:rocket: Planned Features:
 ----------------
-- [ ] **Multi-language Helpers**: With DeepL & GPT 3.5 + GPT 4
-- [ ] **BunnyCDn Helper**:
-- [ ] **Gemini 1.0 & 1.5 Helpers**:
-- [ ] **Zyte API Helper**:
-- [ ] **PageSpeed Insights API Helper**:
+- [ ] P1: **Embedding: AI Text Chunking**: With GPT3.5 or Claude 3 Haiku or Gimini 1.0
+- [ ] P1: **Embedding: Text Chunking**: By separators and limits
+- [ ] P1: **BunnyCDN**: Upload big files or text to CDN
+- [ ] P1: **Gemini 1.0 & 1.5**: Text Generation
+- [ ] P2: **Gemini 1.0 & 1.5**: Vision Support
+- [ ] P3: **Gemini 1.0 & 1.5**: Full Multimodal support
+- [ ] P1: **Claude 3 (Opus, Sonnet & Heiku)**: Text Generation
+- [ ] P2: **Claude 3 (Opus, Sonnet & Heiku)**: Vision Support
+- [ ] P1: **Zyte API**: With Guzzle as beginner
+- [ ] P1: **DOM Crawling**: With Symfony DOM Crawler
+- [ ] P1: **PageSpeed Insights API**:
+- [ ] P2: **DALL·E 3**: Image Creationg
+- [ ] P3: **AI Translator**: With DeepL
+- [ ] P3: **AI Translator**: With GPT 3.5 & GPT 4
+- [ ] P3: **AI Translator**: With Claude 3 (Opus, Sonnet & Heiku)
+- [ ] P3: **AI Translator**: With Gemini 1.0 & 1.5
+- [ ] P3: **Tokenizer for PHP**: With https://github.com/yethee/tiktoken-php
+- [ ] P3: **OpenAI Whisper**: Audio Support
+- [ ] P3: **Example: Pinecone semantic search tool**: UI
+- [ ] P3: **Example: AI Colosseum**: Test differnt AIs with same input
 
 FAQ
 ===
