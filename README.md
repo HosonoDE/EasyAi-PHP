@@ -41,32 +41,27 @@ composer require hosonode/easyai-php dev-master
 
 If you want to use the default model, this is enough, so not a lof ot code:
 ```php
-use EasyAI\OpenAIConfig; // Using OpenAI Config
 use EasyAI\Chat\OpenAIChat; // Using OpenAI Chat
 
-// e.g. in dependencyInjection
-$config = new OpenAIConfig();
-$config->apiKey = $_ENV['OPENAI_API_KEY'];
-$chat = new OpenAIChat($config);
-
 // here is the code to call OpenAI API
-$response = $chat->generateText('Was ist die CR?');
+$chat = new OpenAIChat();
+$response = $chat->generateText('What is the population of Tokyo?');
 ```
 
-If you want to select a specific modal, you just need to use the OpenAIChatModel enum + add 1 line of code:
+If you want to select a specific modal, you need to use the Config & Enums:
 ```php
 use EasyAI\OpenAIConfig; // Using OpenAI Config
 use EasyAI\Chat\OpenAIChat; // Using OpenAI Chat
-use EasyAI\Chat\Enums\OpenAIChatModel; // Using Enmus OpenAIChatModel if you want to set a differnt GPT Model than the default
+use EasyAI\Chat\Enums\OpenAIChatModel; // Using Enmus OpenAIChatModel
 
 // e.g. in dependencyInjection
 $config = new OpenAIConfig();
-$config->apiKey = $_ENV['OPENAI_API_KEY'];
+$config->apiKey = $_ENV['OTHER_KEY']; // Here you can define your key (as default we are using getenv('OPENAI_API_KEY') or $_ENV['OPENAI_API_KEY'])
 $config->model = OpenAIChatModel::Gpt35Turbo->getModelName(); // Here you can define the model
 $chat = new OpenAIChat($config);
 
 // here is the code to call OpenAI API
-$response = $chat->generateText('Was ist die CR?');
+$response = $chat->generateText('What is the population of Tokyo?');
 ```
 
 Right now you can choose these models:
