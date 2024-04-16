@@ -26,17 +26,16 @@ This project utilizes several community-driven packages to power its features:
 Getting Started
 ---------------
 
-### Prerequisites
-
-Ensure you have PHP 8.1 or higher installed on your system.
-
-### Install the project using Composer:
+Install the project using Composer:
 ```
 composer require hosonode/easyai-php dev-master
 ```
 
 Usage
 ---------------
+
+> [!NOTE]
+> To streamline your setup, our PHP repository recognizes OpenAI API keys stored in two default locations: `getenv('OPENAI_API_KEY')` or `$_ENV['OPENAI_API_KEY']`. Simply add your OpenAI key to your ENV file, and no additional configuration is necessary. We also use `$_ENV` because frameworks like Symfony typically disable `getenv` by default.
 
 ### 💬 Usage of `OpenAIChat`
 
@@ -67,7 +66,7 @@ $response = $chat->generateText('What is the population of Tokyo area, answer wi
 // $response = "37 million"
 ```
 
-Right now you can choose these models:
+Right now you can choose these enums:
 ```php
 /* Currently points to gpt-3.5-turbo-0125. */
 OpenAIChatModel::Gpt35Turbo => 'gpt-3.5-turbo',
@@ -115,8 +114,8 @@ Roadmap
 Completed Features
 ------------------
 
-*   **OpenAI GPT-3.5 and GPT-4 Helpers**:
-*   --
+- [x] **OpenAI GPT-3.5 and GPT-4 Helpers**:
+- [x] --
 
 In Progress
 -----------
@@ -126,14 +125,14 @@ In Progress
 
 Planned Features
 ----------------
-*   **Pinecone Vector Databases Helpers**:
-*   **Embedding Helpers**: With OpenAI
-*   **Multi-language Helpers**: With DeepL & GPT 3.5 + GPT 4
-*   **BunnyCDn Helper**:
-*   **Claude 3 (Opus, Sonnet & Haiku) Helpers**:
-*   **Gemini 1.0 & 1.5 Helpers**:
-*   **Zyte API Helper**:
-*   **PageSpeed Insights API Helper**:
+- [ ] **Pinecone Vector Databases Helpers**:
+- [ ] **Embedding Helpers**: With OpenAI
+- [ ] **Multi-language Helpers**: With DeepL & GPT 3.5 + GPT 4
+- [ ] **BunnyCDn Helper**:
+- [ ] **Claude 3 (Opus, Sonnet & Haiku) Helpers**:
+- [ ] **Gemini 1.0 & 1.5 Helpers**:
+- [ ] **Zyte API Helper**:
+- [ ] **PageSpeed Insights API Helper**:
 
 FAQ
 ===
