@@ -13,16 +13,6 @@ Key Features
 *   **AI Utilities**: Offers a variety of helpers such as vector databases from Pinecone and embeddings through OpenAI, streamlining the integration of advanced AI features into your projects.
 *   **Minimal Coding Requirement**: Designed to minimize the coding effort needed on your part, thanks to the numerous ready-to-use helpers.
 
-Open-Source Projects Used
--------------------------
-This project utilizes several community-driven packages to power its features:
-
-*   [openai-php/client](https://github.com/openai-php/client): For interfacing with OpenAI APIs.
-*   [pinecone-php](https://github.com/probots-io/pinecone-php): For integrating vector databases.
-*   [BunnyWay/BunnyCDN.PHP.Storage](https://github.com/BunnyWay/BunnyCDN.PHP.Storage): For cheap HDD & SSD storange + CDN
-*   [deepl-php](https://github.com/DeepLcom/deepl-php): For translation services.
-*   [LLPhant](https://github.com/theodo-group/LLPhant): An inspiration for our repo
-
 Getting Started
 ---------------
 
@@ -115,21 +105,18 @@ Completed Features
 ------------------
 
 - [x] **OpenAI GPT-3.5 and GPT-4 Helpers**:
-- [x] --
+- [x] **Embedding Helpers**: With OpenAI
 
 In Progress
 -----------
 
-*   --
-*   --
+- [ ] **Claude 3 (Opus, Sonnet & Haiku) Helpers**:
+- [ ] **Pinecone Vector Databases Helpers**:
 
 Planned Features
 ----------------
-- [ ] **Pinecone Vector Databases Helpers**:
-- [ ] **Embedding Helpers**: With OpenAI
 - [ ] **Multi-language Helpers**: With DeepL & GPT 3.5 + GPT 4
 - [ ] **BunnyCDn Helper**:
-- [ ] **Claude 3 (Opus, Sonnet & Haiku) Helpers**:
 - [ ] **Gemini 1.0 & 1.5 Helpers**:
 - [ ] **Zyte API Helper**:
 - [ ] **PageSpeed Insights API Helper**:
@@ -146,6 +133,16 @@ Contributing
 ------------
 
 We highly encourage community contributions. Whether you're a developer using our helpers or someone looking to enhance the functionalities of EasyAI-PHP, your contributions are welcome. This collaborative effort benefits everyone involved.
+
+Open-Source Projects Used
+-------------------------
+This project utilizes several community-driven packages to power its features:
+
+*   [openai-php/client](https://github.com/openai-php/client): For interfacing with OpenAI APIs.
+*   [pinecone-php](https://github.com/probots-io/pinecone-php): For integrating vector databases.
+*   [BunnyWay/BunnyCDN.PHP.Storage](https://github.com/BunnyWay/BunnyCDN.PHP.Storage): For cheap HDD & SSD storange + CDN
+*   [deepl-php](https://github.com/DeepLcom/deepl-php): For translation services.
+*   [LLPhant](https://github.com/theodo-group/LLPhant): An inspiration for our repo
 
 Support
 -------
