@@ -105,21 +105,18 @@ Completed Features
 ------------------
 
 - [x] **OpenAI GPT-3.5 and GPT-4 Helpers**:
-- [x] --
+- [x] **Embedding Helpers**: With OpenAI
 
 In Progress
 -----------
 
-*   --
-*   --
+- [ ] **Claude 3 (Opus, Sonnet & Haiku) Helpers**:
+- [ ] **Pinecone Vector Databases Helpers**:
 
 Planned Features
 ----------------
-- [ ] **Pinecone Vector Databases Helpers**:
-- [ ] **Embedding Helpers**: With OpenAI
 - [ ] **Multi-language Helpers**: With DeepL & GPT 3.5 + GPT 4
 - [ ] **BunnyCDn Helper**:
-- [ ] **Claude 3 (Opus, Sonnet & Haiku) Helpers**:
 - [ ] **Gemini 1.0 & 1.5 Helpers**:
 - [ ] **Zyte API Helper**:
 - [ ] **PageSpeed Insights API Helper**:
