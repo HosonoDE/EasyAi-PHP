@@ -30,21 +30,61 @@ Getting Started
 
 Ensure you have PHP 8.1 or higher installed on your system.
 
-### Installation
-
-Install the project using Composer (coming soon):
+### Install the project using Composer:
 ```
-composer require hosonode/easyai-php
+composer require hosonode/easyai-php dev-master
 ```
 
 ### Usage
 
-Integrate the helpers easily into your project using:
+#### Usage of OpenAI chat
+
+If you want to use the default model, this is enough, so not a lof ot code:
 ```php
-use HosonoDE\EasyAI-PHP\SpecificHelper; #Dummy
+use EasyAI\OpenAIConfig; // Using OpenAI Config
+use EasyAI\Chat\OpenAIChat; // Using OpenAI Chat
+
+// e.g. in dependencyInjection
+$config = new OpenAIConfig();
+$config->apiKey = $_ENV['OPENAI_API_KEY'];
+$chat = new OpenAIChat($config);
+
+// here is the code to call OpenAI API
+$response = $chat->generateText('Was ist die CR?');
 ```
 
-No further configuration is needed to get started.
+If you want to select a specific modal, you just need to use the OpenAIChatModel enum + add 1 line of code:
+```php
+use EasyAI\OpenAIConfig; // Using OpenAI Config
+use EasyAI\Chat\OpenAIChat; // Using OpenAI Chat
+use EasyAI\Chat\Enums\OpenAIChatModel; // Using Enmus OpenAIChatModel if you want to set a differnt GPT Model than the default
+
+// e.g. in dependencyInjection
+$config = new OpenAIConfig();
+$config->apiKey = $_ENV['OPENAI_API_KEY'];
+$config->model = OpenAIChatModel::Gpt35Turbo->getModelName(); // Here you can define the model
+$chat = new OpenAIChat($config);
+
+// here is the code to call OpenAI API
+$response = $chat->generateText('Was ist die CR?');
+```
+
+Right now you can choose these models:
+```php
+/* Currently points to gpt-3.5-turbo-0125. */
+OpenAIChatModel::Gpt35Turbo => 'gpt-3.5-turbo',
+
+/* Currently points to gpt-4-0613. See continuous model upgrades. */
+OpenAIChatModel::Gpt4 => 'gpt-4',
+
+/* GPT-4 Turbo preview model. Currently points to gpt-4-0125-preview. */
+OpenAIChatModel::Gpt4TurboPreview => 'gpt-4-turbo-preview',
+
+/* Currently points to gpt-4-turbo-2024-04-09. */
+OpenAiChatModel::Gpt4Turbo => 'gpt-4-turbo',
+```
+Here you can find out which exact model is currently being used.
+[https://platform.openai.com/docs/models/continuous-model-upgrades](https://platform.openai.com/docs/models/continuous-model-upgrades)
 
 Roadmap
 =======
@@ -52,7 +92,7 @@ Roadmap
 Completed Features
 ------------------
 
-*   --
+*   **OpenAI GPT-3.5 and GPT-4 Helpers**:
 *   --
 
 In Progress
@@ -63,7 +103,6 @@ In Progress
 
 Planned Features
 ----------------
-*   **OpenAI GPT-3.5 and GPT-4 Helpers**:
 *   **Pinecone Vector Databases Helpers**:
 *   **Embedding Helpers**: With OpenAI
 *   **Multi-language Helpers**: With DeepL & GPT 3.5 + GPT 4
