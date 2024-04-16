@@ -16,6 +16,11 @@
         "bunnycdn/storage": "^3.2",
         "deeplcom/deepl-php": "^1.7"
     },
+    "suggest": {
+        "probots-io/pinecone-php": "This is required for Pinecone Vector Storage",
+        "bunnycdn/storage": "This is required BunnyCDN HDD & SSD Storange.",
+        "deeplcom/deepl-php": "This is required for AI Translation."
+    },
     "autoload": {
         "psr-4": {
             "EasyAI\\": "src/"
