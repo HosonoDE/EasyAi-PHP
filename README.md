@@ -204,12 +204,12 @@ $response = $vectorStore->similaritySearch($embedding,10,$arguments);
 - [x] **OpenAI GPT-3.5 and GPT-4 Helpers**:
 - [x] **Embedding Helpers**: With OpenAI
 - [x] **Pinecone Vector Databases Add**: Add Vector/s Delete them
+- [x] **Pinecone Vector Databases Search**: Semantic Search
 
 :construction: In Progress:
 -----------
 
 - [ ] P1: **Claude 3 (Opus, Sonnet & Haiku) Helpers**:
-- [ ] P1: **Pinecone Vector Databases Search**: Semantic Search
 
 :rocket: Planned Features:
 ----------------
