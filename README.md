@@ -114,7 +114,7 @@ To start using Pinecone in your projects, you need to integrate the pinecone-php
 composer require probots-io/pinecone-php
 ```
 
-If you want to use the default namespace and a hashed id, this is enough, so not a lot of code:
+#### Adding Vector `addVector`
 ```php
 // Vector Class
 use EasyAI\Embeddings\Vector;
@@ -133,6 +133,8 @@ $embedding = $embeddingGenerator->embedText($text);
 
 // Create new vector object
 $vector = new Vector();
+//$vector->id = "id_84723"; // Additional: If not set hash will be used for id
+//$vector->namespace = "MyNamespace"; // Additional: If not set, pinecone Default namespace
 $vector->content = $text; // Add text for meta info in pinecone
 $vector->embedding = $embedding; // Add vector array to vector class
 
@@ -141,33 +143,56 @@ $vectorStore = new PineconeVectorStore();
 $vectorStore->addVector($vector); // void
 ```
 
-If you want to select a specific id and/or namespace you need to add 2 lines of code:
+#### Deleting Vector `deleteVector`
 ```php
-// Vector Class
-use EasyAI\Embeddings\Vector;
 // Pinecone Vector Store
 use EasyAI\VectorStores\Pinecone\PineconeVectorStore;
 
+// Delete Vector
+$vector = new Vector();
+$vector->id = "id_84723";
+//$vector->namespace = "test"; // Additional: If not set default
+
+$vectorStore = new PineconeVectorStore();
+$vectorStore->deleteVector($vector);
+```
+
+#### Search Vector `similaritySearch`
+```php
+
 // OpenAI Embedding
-use EasyAI\Embeddings\EmbeddingGenerator\OpenAI\OpenAI3LargeEmbeddingGenerator; // In this example I am using the OpenAI3LargeEmbeddingGenerator
+use EasyAI\Embeddings\EmbeddingGenerator\OpenAI\OpenAI3LargeEmbeddingGenerator;
 
-// Text to embed
-$text = "I need support for Shopware 6";
+// Pinecone Storage
+use EasyAI\VectorStores\Pinecone\PineconeVectorStore;
 
-// Embedding
+$text = "E-Commerce Support";
 $embeddingGenerator = new OpenAI3LargeEmbeddingGenerator();
 $embedding = $embeddingGenerator->embedText($text);
 
-// Create new vector object
-$vector = new Vector();
-$vector->id = "id_84723"; // Additional: If not set hash will be used for id
-$vector->namespace = "NamespaceName"; // Additional: If not set, pinecone Default namespace
-$vector->content = $text; // Add text for meta info in pinecone
-$vector->embedding = $embedding; // Add vector array to vector class
-
-// Save vector in Pinecone
+// SimilaritySearch
 $vectorStore = new PineconeVectorStore();
-$vectorStore->addVector($vector); // void
+//$arguments["namespace"] = "MyNamespace"; // Additional: If you want to use a differnt namespace than the default
+//$arguments["includeMetadata"] = false; // Additional: If want to remove the metas in you result
+//$arguments["includeValues"] = true; // Additional: If you also want to get the vector
+$response = $vectorStore->similaritySearch($embedding,10,$arguments);
+
+/* The $response will look like this
+[
+  {
+    "id": "faq_690_q",
+    "score": 0.372145921,
+    "values": []
+  },
+  {
+    "id": "faq_677_q",
+    "score": 0.356256276,
+    "values": []
+  },
+  ...
+]
+*/
+
 ```
 
 :world_map: Roadmap
