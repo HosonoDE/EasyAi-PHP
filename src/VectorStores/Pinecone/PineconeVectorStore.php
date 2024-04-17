@@ -103,17 +103,13 @@
 
 		public function deleteVector(Vector $vector): void
 		{
-			if(!$vector->id) {
+			if(!isset($vector->id)) {
 				throw new Exception('A `id` is required for deleting a vector');
 			} else {
-				if(!$vector->namespace) {
-					throw new Exception('A `namespace` is required for deleting a vector');
-				} else {
-					$response = $this->pinecone->data()->vectors()->delete(
-						ids: $vector->id,
-						namespace: $vector->namespace
-					);
-				}
+				$response = $this->pinecone->data()->vectors()->delete(
+					ids: [$vector->id],
+					namespace: $vector->namespace ?? ''
+				);
 			}
 		}
 
@@ -122,6 +118,25 @@
 		 */
 		public function similaritySearch(array $embedding, int $k = 4, array $additionalArguments = []): array
 		{
+			if(!isset($embedding)) {
+				throw new Exception('No embedding passed!');
+			} else {
+				$response = $this->pinecone->data()->vectors()->query(
+					vector: $embedding,
+					topK: $k,
+					includeValues: $additionalArguments['includeValues'] ?? false,
+					includeMetadata: $additionalArguments['includeMetadata'] ?? true,
+					namespace: $additionalArguments["namespace"] ?? "", // Use default if not set
+				);
+
+				if ($response->successful()) {
+					$json_result = json_decode($response->body(), true);
+					return $json_result;
+				} else {
+					throw new Exception('Pinecone response error');
+				}
+			}
+
 			// Need to be created
 			$results[] = "Not working yet";
 

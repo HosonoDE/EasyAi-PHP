@@ -18,7 +18,7 @@
 		 * Return docs most similar to the input embedding.
 		 *
 		 * @param  float[]  $embedding
-		 * @param  array<string, string|int>|array<mixed[]>  $additionalArguments
+		 * @param  array  $additionalArguments
 		 * @return Vector[]
 		 */
 		abstract public function similaritySearch(array $embedding, int $k = 4, array $additionalArguments = []): array;
