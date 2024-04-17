@@ -131,15 +131,10 @@
 
 				if ($response->successful()) {
 					$json_result = json_decode($response->body(), true);
-					return $json_result;
+					return $json_result["matches"];
 				} else {
 					throw new Exception('Pinecone response error');
 				}
 			}
-
-			// Need to be created
-			$results[] = "Not working yet";
-
-			return $results;
 		}
 	}
