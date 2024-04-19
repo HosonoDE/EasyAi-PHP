@@ -1,10 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
-
-## 📈 Getting Started
-
-* [EasyAI-PHP](getting-started/easyai-php.md)
+* [Introduction: EasyAI-PHP](README.md)
 
 ## 💬 OpenAIChat
 
