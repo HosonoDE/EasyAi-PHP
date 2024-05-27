@@ -4,7 +4,7 @@ EasyAI-PHP
 About The Project
 -----------------
 
-EasyAI-PHP is an open-source initiative designed to significantly simplify the entry into artificial intelligence for PHP-developers. Based on PHP 8.1+, this project integrates advanced AI models and utilities, allowing developers to incorporate complex AI functionalities with minimal coding.
+EasyAI-PHP is an open-source initiative designed to significantly simplify the entry into artificial intelligence for PHP-developers (so basically Lang-Chain for PHP). Based on PHP 8.1+, this project integrates advanced AI models and utilities, allowing developers to incorporate complex AI functionalities with minimal coding.
 
 Key Features
 ------------
@@ -56,31 +56,30 @@ Documentation: [https://hosonode.gitbook.io/easyai-php/tools/basic-usage](https:
 - [x] **Embedding Helpers**: With OpenAI
 - [x] **Pinecone Vector Databases Add**: Add Vector/s Delete them
 - [x] **Pinecone Vector Databases Search**: Semantic Search
+- [x] **Zyte API**: With Guzzle as beginner
+- [x] **DOM Crawling**: With Symfony DOM Crawler
+- [x] **Tools**:
 
 :construction: In Progress:
 -----------
-
-- [ ] P1: **Zyte API**: With Guzzle as beginner
-- [ ] P1: **DOM Crawling**: With Symfony DOM Crawler
-- [ ] P1: **Tools**:
-- [ ] P1: **Claude 3 (Opus, Sonnet & Haiku) Helpers**:
-
-:rocket: Planned Features:
-----------------
-- [ ] P1: **Embedding: AI Text Chunking**: With GPT3.5 or Claude 3 Haiku or Gimini 1.0
-- [ ] P1: **Embedding: Text Chunking**: By separators and limits
-- [ ] P1: **BunnyCDN**: Upload big files or text to CDN
+- [ ] P1: **AI Translator**: With Gemini 1.0 & 1.5
+- [ ] P1: **PageSpeed Insights API**:
 - [ ] P1: **Gemini 1.0 & 1.5**: Text Generation
 - [ ] P2: **Gemini 1.0 & 1.5**: Vision Support
 - [ ] P3: **Gemini 1.0 & 1.5**: Full Multimodal support
+- [ ] P2: **BunnyCDN**: Upload big files or text to CDN
+
+:rocket: Planned Features:
+----------------
+- [ ] P2: **Claude 3 (Opus, Sonnet & Haiku) Helpers**:
+- [ ] P2: **Embedding: AI Text Chunking**: With GPT3.5 or Claude 3 Haiku or Gimini 1.0
+- [ ] P2: **Embedding: Text Chunking**: By separators and limits
 - [ ] P1: **Claude 3 (Opus, Sonnet & Heiku)**: Text Generation
 - [ ] P2: **Claude 3 (Opus, Sonnet & Heiku)**: Vision Support
-- [ ] P1: **PageSpeed Insights API**:
 - [ ] P2: **DALL·E 3**: Image Creationg
 - [ ] P3: **AI Translator**: With DeepL
 - [ ] P3: **AI Translator**: With GPT 3.5 & GPT 4
 - [ ] P3: **AI Translator**: With Claude 3 (Opus, Sonnet & Heiku)
-- [ ] P3: **AI Translator**: With Gemini 1.0 & 1.5
 - [ ] P3: **Tokenizer for PHP**: With https://github.com/yethee/tiktoken-php
 - [ ] P3: **OpenAI Whisper**: Audio Support
 - [ ] P3: **Example: Pinecone semantic search tool**: UI
@@ -108,6 +107,7 @@ This project utilizes several community-driven packages to power its features:
 *   [BunnyWay/BunnyCDN.PHP.Storage](https://github.com/BunnyWay/BunnyCDN.PHP.Storage): For cheap HDD & SSD storange + CDN
 *   [deepl-php](https://github.com/DeepLcom/deepl-php): For translation services.
 *   [LLPhant](https://github.com/theodo-group/LLPhant): An inspiration for our repo
+*   [Gemini PHP](https://github.com/google-gemini-php/client): Gemini for PHP
 
 Support
 -------
