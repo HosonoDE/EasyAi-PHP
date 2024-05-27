@@ -3,18 +3,23 @@
 	namespace EasyAI\Chat;
 
 	use Exception;
+
 	use GuzzleHttp\Psr7\Utils;
+
 	use EasyAI\Chat\Enums\ChatRole;
 	use EasyAI\Chat\Enums\OpenAIChatModel;
 	use EasyAI\Chat\FunctionInfo\FunctionInfo;
 	use EasyAI\Chat\FunctionInfo\ToolFormatter;
+
 	use EasyAI\OpenAIConfig;
+
 	use OpenAI;
 	use OpenAI\Client;
 	use OpenAI\Responses\Chat\CreateResponse;
 	use OpenAI\Responses\Chat\CreateResponseToolCall;
 	use OpenAI\Responses\Chat\CreateStreamedResponseToolCall;
 	use OpenAI\Responses\StreamResponse;
+
 	use Psr\Http\Message\StreamInterface;
 
 	use function getenv;
@@ -42,9 +47,16 @@
 			if ($config instanceof OpenAIConfig && $config->client instanceof Client) {
 				$this->client = $config->client;
 			} else {
-				$apiKey = $config->apiKey ?? getenv('OPENAI_API_KEY');
-				if (! $apiKey) {
-					throw new Exception('You have to provide a OPENAI_API_KEY env var to request OpenAI .');
+				if (isset($config->apiKey)) {
+					$apiKey = $config->apiKey;
+				} elseif (getenv('OPENAI_API_KEY')) {
+					/* Use getenv */
+					$apiKey = getenv('OPENAI_API_KEY');
+				} elseif (isset($_ENV['OPENAI_API_KEY'])) {
+					/* Use $_ENV */
+					$apiKey = $_ENV['OPENAI_API_KEY'];
+				} else {
+					throw new Exception('You have to provide a OPENAI_API_KEY env var to request OpenAI.');
 				}
 
 				$this->client = OpenAI::client($apiKey);
@@ -120,13 +132,13 @@
 		public function setTools(array $tools): void
 		{
 			$this->tools = $tools;
+
 		}
 
 		public function addTool(FunctionInfo $functionInfo): void
 		{
 			$this->tools[] = $functionInfo;
 		}
-
 		/**
 		 * @deprecated Use setTools instead
 		 *
@@ -136,7 +148,6 @@
 		{
 			$this->tools = $functions;
 		}
-
 		/**
 		 * @deprecated Use addTool instead
 		 */
