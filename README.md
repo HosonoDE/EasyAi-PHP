@@ -58,7 +58,7 @@ Documentation: [https://hosonode.gitbook.io/easyai-php/tools/basic-usage](https:
 - [x] **Pinecone Vector Databases Search**: Semantic Search
 - [x] **Zyte API**: With Guzzle as beginner
 - [x] **DOM Crawling**: With Symfony DOM Crawler
-- [x] **Tools**:
+- [x] **Tools**: AsyncHttpRequests, HTML Cleaner, HTMl Extractor, Site Type Classifier, etc.
 
 :construction: In Progress:
 -----------
