@@ -18,7 +18,7 @@ Getting Started
 
 Install the project using Composer:
 ```
-composer require hosonode/easyai-php dev-master
+composer require hosonode/easyai-php
 ```
 
 Usage
