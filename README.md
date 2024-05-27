@@ -59,6 +59,7 @@ Documentation: [https://hosonode.gitbook.io/easyai-php/tools/basic-usage](https:
 - [x] **Zyte API**: With Guzzle as beginner
 - [x] **DOM Crawling**: With Symfony DOM Crawler
 - [x] **Tools**: AsyncHttpRequests, HTML Cleaner, HTMl Extractor, Site Type Classifier, etc.
+- [x] **DataForSEO**: Integration of DatForSEO API Integration
 
 :construction: In Progress:
 -----------
